@@ -8,7 +8,7 @@ mongoose.connect('mongodb://rokas:rokas@192.168.32.2:27017/?authSource=admin').t
 }).catch((e) => {
     console.log('Connection failed 🍎');
     console.log(e);
-})
+});
 
 app.get('/', (req, res) => {
     res.send('Hello! Bro! 🚀');
