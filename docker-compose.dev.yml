@@ -10,4 +10,10 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - MONGO_USER=rokas
+      - MONGO_PASSWORD=rokas
     command: yarn dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rokas
+      - MONGO_INITDB_ROOT_PASSWORD=rokas
