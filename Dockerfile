@@ -3,5 +3,6 @@ WORKDIR /app
 COPY package.json .
 RUN yarn
 COPY . ./
-EXPOSE 3000
+ENV PORT 3000
+EXPOSE $PORT
 CMD ["yarn", "dev"]
