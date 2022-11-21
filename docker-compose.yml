@@ -12,3 +12,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=rokas
       - MONGO_INITDB_ROOT_PASSWORD=rokas
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:
