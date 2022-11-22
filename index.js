@@ -43,6 +43,8 @@ const connectWithRetry = () => {
 connectWithRetry();
 
 // Middlewares setup
+app.enable("trust proxy");
+
 app.use(
     session({
         store: new RedisStore({ client: redisClient }),
@@ -58,6 +60,7 @@ app.use(express.json());
 
 app.get('/api/v1', (req, res) => {
     res.send('Hello! Bro! 🚀');
+    console.log("yeah it ran 🍏");
 });
 
 // if someone sends request, and it looks like localhost:3000/posts, then it will be handled by postRouter
