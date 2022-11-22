@@ -7,16 +7,17 @@ services:
     build:
       context: .
       args:
-        - NODE_ENV=development
+        NODE_ENV: development
     volumes:
-      - .:/app
+      - ./:/app
       - /app/node_modules
     environment:
       - NODE_ENV=development
       - MONGO_USER=rokas
       - MONGO_PASSWORD=rokas
       - SESSION_SECRET=secret
-    command: yarn dev
+
+    command: npm run dev
   mongo:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=rokas
