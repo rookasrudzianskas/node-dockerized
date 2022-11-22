@@ -12,6 +12,7 @@ services:
 
   node-app:
     build: .
+    image: rookas/node-app
     environment:
       - PORT=3000
     depends_on:
