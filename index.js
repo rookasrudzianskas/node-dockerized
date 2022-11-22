@@ -60,7 +60,7 @@ app.use(
 app.use(express.json());
 
 app.get('/api/v1', (req, res) => {
-    res.send('Hello! Bro!! 🚀');
+    res.send('Hello!!! Bro!! 🚀');
     console.log("yeah it ran 🍏");
 });
 
