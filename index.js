@@ -49,7 +49,7 @@ app.use(
         secret: SESSION_SECRET,
         saveUninitialized: true,
         httpOnly: true,
-        maxAge: 3000000,
+        maxAge: 6000,
         resave: false,
     })
 );
