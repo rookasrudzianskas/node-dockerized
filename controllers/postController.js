@@ -47,13 +47,24 @@ exports.updatePost = async (req, res, next) => {
     try {
         const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
-            runValidators: true
+            runValidators: true,
         });
         res.status(200).json({
             status: 'success',
             data: {
                 post
             }
+        });
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+}
+
+exports.deletePost = async (req, res, next) => {
+    try {
+        const post = await Post.findByIdAndDelete(req.params.id);
+        res.status(200).json({
+            status: 'success'
         });
     } catch (error) {
         res.status(404).json({message: error.message});
