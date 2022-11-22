@@ -31,19 +31,19 @@ exports.login = async (req, res) => {
         const user = await User.findOne({username});
         if(!user) return res.status(404).json({
             status: 'fail',
-            message: 'User not found'
+            message: 'User not found 🔺'
         });
 
         const isCorrect = await bcrypt.compare(password, user.password);
         if(isCorrect) {
             res.status(200).json({
                 status: 'success',
-                message: 'Logged in successfully'
+                message: 'Logged in successfully 🍏'
             });
         } else {
             res.status(400).json({
                 status: 'fail',
-                message: 'Incorrect password'
+                message: 'Incorrect password or username'
             });
         }
     } catch (error) {
