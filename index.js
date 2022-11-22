@@ -56,7 +56,7 @@ app.use(
 // app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/api/v1', (req, res) => {
     res.send('Hello! Bro! 🚀');
 });
 
