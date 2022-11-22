@@ -13,11 +13,13 @@ const connectWithRetry = () => {
     }).then(() => {
         console.log('Connected to database 🍏');
     }).catch((e) => {
-        console.log('Connection failed 🍎');
+        console.log('Connection failed 🍎', 'Retrying in 5 seconds...');
         console.log(e);
         setTimeout(connectWithRetry, 5000);
     });
 }
+
+connectWithRetry();
 
 app.get('/', (req, res) => {
     res.send('Hello! Bro! 🚀');
