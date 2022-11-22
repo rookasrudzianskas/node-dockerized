@@ -37,14 +37,17 @@ const connectWithRetry = () => {
 connectWithRetry();
 
 // Middlewares setup
-app.use(session, {
+app.use(session({
     store: new RedisStore({ client: redisClient }),
     secret: SESSION_SECRET,
     cookie: {
         secure: false,
         resave: false,
+        saveUninitialized: false,
+        httpOnly: true,
+        maxAge: 30000,
     }
-});
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
