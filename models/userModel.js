@@ -10,4 +10,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please tell us your password!'],
     }
-})
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
