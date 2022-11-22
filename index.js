@@ -5,6 +5,7 @@ const {MONGO_USER, MONGO_PASSWORD, MONGO_IP, MONGO_PORT} = require("./config/con
 const port = process.env.PORT || 3000;
 
 const postRouter = require('./routes/postRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
 
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 
 // if someone sends request, and it looks like localhost:3000/posts, then it will be handled by postRouter
 app.use("/api/v1/posts", postRouter);
+app.use("/api/v1/users", userRouter);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
